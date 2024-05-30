@@ -23,7 +23,7 @@
     <div class="c-InputTips">
       <div class="c-bill">
         <label for="" class="c-bill__label">Bill</label>
-        <input id="inputBill" placeholder="$" class="c-bill-input" type="number">
+        <input id="inputBill" placeholder="$" class="c-bill-input" type="number" min="1" oninput="this.value = Math.abs(this.value)>
       </div>
       <div class="c-select">
         <p>Select Tip %</p>
@@ -51,11 +51,29 @@
       </div>
       <div class="c-people">
         <p>Number of people</p>
-        <input class="number--people" type="number" min="1" oninput="this.value = Math.abs(this.value)">
+        <input id="people" class="number--people" type="number" min="1" oninput="this.value = Math.abs(this.value)">
       </div>
     </div>
-    <div class="c-results">
-
+    <div class="c-result">
+      <div class="c-tip-amount">
+        <P>
+          Tip Amount
+        </P>
+        <h2 id="amount">
+          $0.00
+        </h2>
+      </div>
+      <div class="c-tip-amount">
+        <P>
+          Total
+        </P>
+        <h2 id="total">
+          $0.00
+        </h2>
+      </div>
+      <button id="reset" class="reset-button">
+        RESET
+      </button>
     </div>
   </main>
   <div class="attribution">
