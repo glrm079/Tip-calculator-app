@@ -1,0 +1,60 @@
+:root{
+    ---black--darker : #1e1e1e;
+    ---grey--darker: #343434;
+}
+
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(---grey--darker);
+    font-family: "Space Mono", monospace;
+    color: #343434;
+}
+
+
+main{
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.c-InputTips{
+    width: 50%;
+
+}
+.c-bill__label{
+    font-weight: bold;
+}
+.c-bill-input{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #1e1e1e;
+    text-align: end;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(---grey--darker);
+}
+.c-bill-input:focus-visible{
+    outline: 2px solid var(---black--darker);
+    background-color: #d7d7d722;
+}
+
+
+.attribution{
+    position: absolute;    
+    bottom: 0px;
+}
