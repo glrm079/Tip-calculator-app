@@ -2,21 +2,37 @@
 
 
 
-document.getElementById("reset").addEventListener("click",()=>{
-    let value = parseFloat(document.getElementById("inputBill").value)
-    let tip = document.querySelectorAll(".c-select__item").forEach((item)=>{
-        if(item.classList.contains("c-select__item--active")){
-            return parseFloat(item.value)
-        }
-    })
-    let people = parseFloat(document.getElementById("people").value)
-    let total = (value / 100)*tip
-    let amount = total/people
-    document.getElementById("total").innerText  = "$"+ total
-    document.getElementById("amount").innerText = "$"+ amount
-    alert(total,amount)
+document.getElementById("reset").addEventListener("click", () => {
+    let value = parseFloat(document.getElementById("inputBill").value);
+    let tip = null;
 
-})
+    document.querySelectorAll(".c-select__item").forEach((item) => {
+        if (item.classList.contains("c-select__item--active")) {
+            if(item.value != undefined || null){
+                tip = parseFloat(item.value);
+            }else{
+                tip = parseFloat(item.textContent) 
+            }
+        }
+    });
+
+    let people = parseFloat(document.getElementById("people").value);
+
+    if (isNaN(value) || isNaN(tip) || isNaN(people) || people <= 0) {
+        alert("Please enter valid inputs.");
+        return;
+    }
+
+    let total = (value * tip) / 100;
+    let amount = total / people;
+
+    if (!isNaN(total) && total !== 0 && !isNaN(amount) && amount !== 0) {
+        document.getElementById("total").innerText = "$" + total.toFixed(2);
+        document.getElementById("amount").innerText = "$" + amount.toFixed(2);
+        alert("Total: $" + total.toFixed(2) + "\nAmount per person: $" + amount.toFixed(2));
+    }
+});
+
 
 
 document.querySelectorAll(".c-select__item").forEach((item) => {

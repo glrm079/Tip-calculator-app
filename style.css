@@ -94,6 +94,7 @@ main{
     width: fit-content;
     display: block;
     background-color: white;
+    width: 120px;
 }
 .custom--Active:hover{
     background-color: white;
